@@ -29,40 +29,43 @@ namespace PansiyonKayitUygulamasi
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdminGiris = new System.Windows.Forms.Button();
+            this.btnYeniMusteri = new System.Windows.Forms.Button();
+            this.btnOdalar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAdminGiris
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Location = new System.Drawing.Point(22, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 58);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Admin Giriş";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAdminGiris.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminGiris.Location = new System.Drawing.Point(22, 25);
+            this.btnAdminGiris.Name = "btnAdminGiris";
+            this.btnAdminGiris.Size = new System.Drawing.Size(96, 58);
+            this.btnAdminGiris.TabIndex = 0;
+            this.btnAdminGiris.Text = "Admin Giriş";
+            this.btnAdminGiris.UseVisualStyleBackColor = false;
+            this.btnAdminGiris.Click += new System.EventHandler(this.btnAdminGiris_Click);
             // 
-            // button2
+            // btnYeniMusteri
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Location = new System.Drawing.Point(141, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 58);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Yeni Müşteri";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnYeniMusteri.BackColor = System.Drawing.Color.Yellow;
+            this.btnYeniMusteri.Location = new System.Drawing.Point(141, 25);
+            this.btnYeniMusteri.Name = "btnYeniMusteri";
+            this.btnYeniMusteri.Size = new System.Drawing.Size(96, 58);
+            this.btnYeniMusteri.TabIndex = 1;
+            this.btnYeniMusteri.Text = "Yeni Müşteri";
+            this.btnYeniMusteri.UseVisualStyleBackColor = false;
+            this.btnYeniMusteri.Click += new System.EventHandler(this.btnYeniMusteri_Click);
             // 
-            // button3
+            // btnOdalar
             // 
-            this.button3.BackColor = System.Drawing.Color.SlateBlue;
-            this.button3.Location = new System.Drawing.Point(266, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 58);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Odalar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnOdalar.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnOdalar.Location = new System.Drawing.Point(266, 25);
+            this.btnOdalar.Name = "btnOdalar";
+            this.btnOdalar.Size = new System.Drawing.Size(96, 58);
+            this.btnOdalar.TabIndex = 2;
+            this.btnOdalar.Text = "Odalar";
+            this.btnOdalar.UseVisualStyleBackColor = false;
+            this.btnOdalar.Click += new System.EventHandler(this.btnOdalar_Click);
             // 
             // FrmAnaForm
             // 
@@ -70,9 +73,9 @@ namespace PansiyonKayitUygulamasi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(606, 319);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOdalar);
+            this.Controls.Add(this.btnYeniMusteri);
+            this.Controls.Add(this.btnAdminGiris);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAnaForm";
@@ -84,8 +87,8 @@ namespace PansiyonKayitUygulamasi
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdminGiris;
+        private System.Windows.Forms.Button btnYeniMusteri;
+        private System.Windows.Forms.Button btnOdalar;
     }
 }

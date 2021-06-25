@@ -30,6 +30,8 @@ namespace PansiyonKayitUygulamasi
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
             this.txtUcret = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpCikisTarihi = new System.Windows.Forms.DateTimePicker();
@@ -61,12 +63,16 @@ namespace PansiyonKayitUygulamasi
             this.btnOda101 = new System.Windows.Forms.Button();
             this.btnDoluOda = new System.Windows.Forms.Button();
             this.btnBosOda = new System.Windows.Forms.Button();
+            this.lblToplamGun = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblToplamGun);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.cmbCinsiyet);
             this.groupBox1.Controls.Add(this.txtUcret);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.dtpCikisTarihi);
@@ -88,14 +94,34 @@ namespace PansiyonKayitUygulamasi
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 335);
+            this.groupBox1.Size = new System.Drawing.Size(362, 374);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Bilgileri";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(48, 92);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 19);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Cinsiyet:";
+            // 
+            // cmbCinsiyet
+            // 
+            this.cmbCinsiyet.FormattingEnabled = true;
+            this.cmbCinsiyet.Items.AddRange(new object[] {
+            "Erkek",
+            "Kadın"});
+            this.cmbCinsiyet.Location = new System.Drawing.Point(123, 89);
+            this.cmbCinsiyet.Name = "cmbCinsiyet";
+            this.cmbCinsiyet.Size = new System.Drawing.Size(233, 27);
+            this.cmbCinsiyet.TabIndex = 25;
+            // 
             // txtUcret
             // 
-            this.txtUcret.Location = new System.Drawing.Point(123, 202);
+            this.txtUcret.Location = new System.Drawing.Point(123, 241);
             this.txtUcret.Name = "txtUcret";
             this.txtUcret.Size = new System.Drawing.Size(233, 27);
             this.txtUcret.TabIndex = 23;
@@ -103,7 +129,7 @@ namespace PansiyonKayitUygulamasi
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(65, 204);
+            this.label9.Location = new System.Drawing.Point(65, 243);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 19);
             this.label9.TabIndex = 22;
@@ -111,21 +137,22 @@ namespace PansiyonKayitUygulamasi
             // 
             // dtpCikisTarihi
             // 
-            this.dtpCikisTarihi.Location = new System.Drawing.Point(123, 264);
+            this.dtpCikisTarihi.Location = new System.Drawing.Point(123, 303);
             this.dtpCikisTarihi.Name = "dtpCikisTarihi";
             this.dtpCikisTarihi.Size = new System.Drawing.Size(233, 27);
             this.dtpCikisTarihi.TabIndex = 21;
+            this.dtpCikisTarihi.ValueChanged += new System.EventHandler(this.dtpCikisTarihi_ValueChanged);
             // 
             // dtpGirisTarihi
             // 
-            this.dtpGirisTarihi.Location = new System.Drawing.Point(123, 235);
+            this.dtpGirisTarihi.Location = new System.Drawing.Point(123, 274);
             this.dtpGirisTarihi.Name = "dtpGirisTarihi";
             this.dtpGirisTarihi.Size = new System.Drawing.Size(233, 27);
             this.dtpGirisTarihi.TabIndex = 20;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(221, 302);
+            this.btnKaydet.Location = new System.Drawing.Point(221, 341);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(135, 27);
             this.btnKaydet.TabIndex = 19;
@@ -134,7 +161,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // mskTc
             // 
-            this.mskTc.Location = new System.Drawing.Point(123, 139);
+            this.mskTc.Location = new System.Drawing.Point(123, 178);
             this.mskTc.Mask = "00000000000";
             this.mskTc.Name = "mskTc";
             this.mskTc.Size = new System.Drawing.Size(233, 27);
@@ -143,7 +170,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // mskTelefon
             // 
-            this.mskTelefon.Location = new System.Drawing.Point(123, 81);
+            this.mskTelefon.Location = new System.Drawing.Point(123, 120);
             this.mskTelefon.Mask = "(999) 000-0000";
             this.mskTelefon.Name = "mskTelefon";
             this.mskTelefon.Size = new System.Drawing.Size(233, 27);
@@ -152,21 +179,21 @@ namespace PansiyonKayitUygulamasi
             // txtOdaNo
             // 
             this.txtOdaNo.Enabled = false;
-            this.txtOdaNo.Location = new System.Drawing.Point(123, 171);
+            this.txtOdaNo.Location = new System.Drawing.Point(123, 210);
             this.txtOdaNo.Name = "txtOdaNo";
             this.txtOdaNo.Size = new System.Drawing.Size(233, 27);
             this.txtOdaNo.TabIndex = 13;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(123, 110);
+            this.txtMail.Location = new System.Drawing.Point(123, 149);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(233, 27);
             this.txtMail.TabIndex = 11;
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(123, 52);
+            this.txtSoyad.Location = new System.Drawing.Point(123, 56);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(233, 27);
             this.txtSoyad.TabIndex = 10;
@@ -181,7 +208,7 @@ namespace PansiyonKayitUygulamasi
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 264);
+            this.label8.Location = new System.Drawing.Point(35, 303);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 19);
             this.label8.TabIndex = 7;
@@ -190,7 +217,7 @@ namespace PansiyonKayitUygulamasi
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 235);
+            this.label7.Location = new System.Drawing.Point(30, 274);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 19);
             this.label7.TabIndex = 6;
@@ -199,7 +226,7 @@ namespace PansiyonKayitUygulamasi
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 171);
+            this.label6.Location = new System.Drawing.Point(3, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 19);
             this.label6.TabIndex = 5;
@@ -208,7 +235,7 @@ namespace PansiyonKayitUygulamasi
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 142);
+            this.label5.Location = new System.Drawing.Point(10, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 19);
             this.label5.TabIndex = 4;
@@ -217,7 +244,7 @@ namespace PansiyonKayitUygulamasi
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 113);
+            this.label4.Location = new System.Drawing.Point(74, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 19);
             this.label4.TabIndex = 3;
@@ -226,7 +253,7 @@ namespace PansiyonKayitUygulamasi
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 84);
+            this.label3.Location = new System.Drawing.Point(52, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 19);
             this.label3.TabIndex = 2;
@@ -235,7 +262,7 @@ namespace PansiyonKayitUygulamasi
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 55);
+            this.label2.Location = new System.Drawing.Point(56, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 1;
@@ -389,6 +416,15 @@ namespace PansiyonKayitUygulamasi
             this.btnBosOda.UseVisualStyleBackColor = false;
             this.btnBosOda.Click += new System.EventHandler(this.btnBosOda_Click);
             // 
+            // lblToplamGun
+            // 
+            this.lblToplamGun.AutoSize = true;
+            this.lblToplamGun.Location = new System.Drawing.Point(119, 341);
+            this.lblToplamGun.Name = "lblToplamGun";
+            this.lblToplamGun.Size = new System.Drawing.Size(92, 19);
+            this.lblToplamGun.TabIndex = 27;
+            this.lblToplamGun.Text = "Toplam Gün";
+            // 
             // FrmYeniMusteri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -406,7 +442,7 @@ namespace PansiyonKayitUygulamasi
             this.MinimizeBox = false;
             this.Name = "FrmYeniMusteri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmYeniMusteri";
+            this.Text = "Yeni Müşteri Ekle";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -448,5 +484,8 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.DateTimePicker dtpGirisTarihi;
         private System.Windows.Forms.TextBox txtUcret;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbCinsiyet;
+        private System.Windows.Forms.Label lblToplamGun;
     }
 }

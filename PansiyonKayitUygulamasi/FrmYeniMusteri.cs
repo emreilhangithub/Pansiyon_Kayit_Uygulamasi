@@ -71,5 +71,23 @@ namespace PansiyonKayitUygulamasi
         {
             MessageBox.Show("Yeşil Renkli Butonlar Boş Odaları Gösterir");
         }
+
+        private void dtpCikisTarihi_ValueChanged(object sender, EventArgs e)
+        {
+            //cıkıs tarihi değeri değiştigi zaman
+            int ucret;
+            DateTime kucukTarih = Convert.ToDateTime(dtpGirisTarihi.Text);
+            DateTime buyukTarih = Convert.ToDateTime(dtpCikisTarihi.Text); //tarih olark tanımladık
+
+            TimeSpan Sonuc;
+            Sonuc = buyukTarih - kucukTarih; //aradaki farkı alır
+
+            lblToplamGun.Text = Sonuc.TotalDays.ToString();
+            //total daysa demezsek 000 ile yazar
+
+            ucret = Convert.ToInt32(lblToplamGun.Text) * 50;
+            txtUcret.Text = ucret.ToString();
+
+        }
     }
 }

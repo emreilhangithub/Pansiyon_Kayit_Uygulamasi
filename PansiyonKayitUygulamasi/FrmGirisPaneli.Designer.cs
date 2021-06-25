@@ -33,7 +33,7 @@ namespace PansiyonKayitUygulamasi
             this.label2 = new System.Windows.Forms.Label();
             this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
             this.txtKullaniciSifre = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGirisYap = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,15 +72,16 @@ namespace PansiyonKayitUygulamasi
             this.txtKullaniciSifre.Size = new System.Drawing.Size(83, 27);
             this.txtKullaniciSifre.TabIndex = 3;
             // 
-            // button1
+            // btnGirisYap
             // 
-            this.button1.Location = new System.Drawing.Point(108, 100);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Giriş Yap";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGirisYap.Location = new System.Drawing.Point(108, 100);
+            this.btnGirisYap.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGirisYap.Name = "btnGirisYap";
+            this.btnGirisYap.Size = new System.Drawing.Size(101, 31);
+            this.btnGirisYap.TabIndex = 4;
+            this.btnGirisYap.Text = "Giriş Yap";
+            this.btnGirisYap.UseVisualStyleBackColor = true;
+            this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
             // 
             // FrmGirisPaneli
             // 
@@ -89,7 +90,7 @@ namespace PansiyonKayitUygulamasi
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(330, 152);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGirisYap);
             this.Controls.Add(this.txtKullaniciSifre);
             this.Controls.Add(this.txtKullaniciAdi);
             this.Controls.Add(this.label2);
@@ -111,7 +112,7 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKullaniciAdi;
         private System.Windows.Forms.TextBox txtKullaniciSifre;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGirisYap;
     }
 }
 
