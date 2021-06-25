@@ -75,20 +75,64 @@ namespace PansiyonKayitUygulamasi
             if (etkilenen > 0)
             {
                 MessageBox.Show("Silme Başarılı");
+                listele();
+                temizle();
             }
             else
             {
                 MessageBox.Show("Silme işlemi başarısız!!!!!!!!!");
             }
             bgl.baglanti().Close();
-            listele();
-            temizle();
+            
 
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
            temizle();
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            musteri.Ad1 = txtAd.Text;
+            musteri.Soyad1 = txtSoyad.Text;
+            musteri.Cinsiyet1 = cmbCinsiyet.Text;
+            musteri.Telefon1 = mskTelefon.Text;
+            musteri.Mail1 = txtMail.Text;
+            musteri.Tc1 = txtTc.Text;
+            musteri.OdaNo1 = txtOdaNo.Text;
+            musteri.Ucret1 = decimal.Parse(txtUcret.Text);
+            musteri.GirisTarihi1 = DateTime.Parse(dtpGirisTarihi.Text);
+            musteri.CikisTarihi1 = DateTime.Parse(dtpCikisTarihi.Text);
+            //lblToplamGun.Text = dtpCikisTarihi.Value.ToString("yyyy-MM-dd");
+            //lblToplamGun.Text = musteri.GirisTarihi1.ToString();
+
+            SqlCommand guncellemekomutu = new SqlCommand("UPDATE Tbl_Musteri  SET Ad=@Ad,Soyad=@Soyad,Cinsiyet=@Cinsiyet,Telefon=@Telefon,Mail=@Mail,Tc=@Tc,OdaNo=@OdaNo,Ucret=@Ucret,GirisTarihi=@GirisTarihi,CikisTarihi=@CikisTarihi where Musteri_Id=@Musteri_Id", bgl.baglanti());
+            guncellemekomutu.Parameters.AddWithValue("@Ad", musteri.Ad1);
+            guncellemekomutu.Parameters.AddWithValue("@Soyad", musteri.Soyad1);
+            guncellemekomutu.Parameters.AddWithValue("@Cinsiyet", musteri.Cinsiyet1);
+            guncellemekomutu.Parameters.AddWithValue("@Telefon", musteri.Telefon1);
+            guncellemekomutu.Parameters.AddWithValue("@Mail", musteri.Mail1);
+            guncellemekomutu.Parameters.AddWithValue("@Tc", musteri.Tc1);
+            guncellemekomutu.Parameters.AddWithValue("@OdaNo", musteri.OdaNo1);
+            guncellemekomutu.Parameters.AddWithValue("@Ucret", musteri.Ucret1);
+            guncellemekomutu.Parameters.AddWithValue("@GirisTarihi", musteri.GirisTarihi1);
+            guncellemekomutu.Parameters.AddWithValue("@CikisTarihi", musteri.CikisTarihi1);
+            guncellemekomutu.Parameters.AddWithValue("@Musteri_Id", musteri.Musteri_Id1);
+
+            int etkilenen = guncellemekomutu.ExecuteNonQuery();
+            if (etkilenen > 0)
+            {
+                MessageBox.Show("Güncelleme Başarılı");
+                listele();
+                temizle();
+            }
+            else
+            {
+                MessageBox.Show("Günceleme işlemi başarısız!!!!!!!!!");
+            }
+            bgl.baglanti().Close();
+            
         }
     }
 }
