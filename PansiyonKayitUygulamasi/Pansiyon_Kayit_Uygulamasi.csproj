@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include=".cs" />
+    <Compile Include="Kullanici.cs" />
     <Compile Include="Musteri.cs" />
     <Compile Include="sqlbaglantisi.cs" />
     <Compile Include="FrmAnaForm.cs">
