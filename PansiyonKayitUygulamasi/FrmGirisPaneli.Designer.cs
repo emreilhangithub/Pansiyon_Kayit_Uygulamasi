@@ -63,6 +63,7 @@ namespace PansiyonKayitUygulamasi
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(83, 27);
             this.txtKullaniciAdi.TabIndex = 2;
+            this.txtKullaniciAdi.Text = "emre";
             // 
             // txtKullaniciSifre
             // 
@@ -71,6 +72,8 @@ namespace PansiyonKayitUygulamasi
             this.txtKullaniciSifre.Name = "txtKullaniciSifre";
             this.txtKullaniciSifre.Size = new System.Drawing.Size(83, 27);
             this.txtKullaniciSifre.TabIndex = 3;
+            this.txtKullaniciSifre.Text = "test";
+            this.txtKullaniciSifre.UseSystemPasswordChar = true;
             // 
             // btnGirisYap
             // 

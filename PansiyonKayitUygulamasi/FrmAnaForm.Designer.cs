@@ -32,6 +32,7 @@ namespace PansiyonKayitUygulamasi
             this.btnAdminGiris = new System.Windows.Forms.Button();
             this.btnYeniMusteri = new System.Windows.Forms.Button();
             this.btnOdalar = new System.Windows.Forms.Button();
+            this.btnMusteriler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdminGiris
@@ -67,12 +68,24 @@ namespace PansiyonKayitUygulamasi
             this.btnOdalar.UseVisualStyleBackColor = false;
             this.btnOdalar.Click += new System.EventHandler(this.btnOdalar_Click);
             // 
+            // btnMusteriler
+            // 
+            this.btnMusteriler.BackColor = System.Drawing.Color.Orange;
+            this.btnMusteriler.Location = new System.Drawing.Point(386, 25);
+            this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.Size = new System.Drawing.Size(96, 58);
+            this.btnMusteriler.TabIndex = 3;
+            this.btnMusteriler.Text = "Müşteriler";
+            this.btnMusteriler.UseVisualStyleBackColor = false;
+            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
+            // 
             // FrmAnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(606, 319);
+            this.Controls.Add(this.btnMusteriler);
             this.Controls.Add(this.btnOdalar);
             this.Controls.Add(this.btnYeniMusteri);
             this.Controls.Add(this.btnAdminGiris);
@@ -90,5 +103,6 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.Button btnAdminGiris;
         private System.Windows.Forms.Button btnYeniMusteri;
         private System.Windows.Forms.Button btnOdalar;
+        private System.Windows.Forms.Button btnMusteriler;
     }
 }

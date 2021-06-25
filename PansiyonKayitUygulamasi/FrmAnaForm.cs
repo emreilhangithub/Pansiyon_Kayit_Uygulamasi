@@ -35,5 +35,11 @@ namespace PansiyonKayitUygulamasi
             FrmOdalar fr = new FrmOdalar();
             fr.Show();
         }
+
+        private void btnMusteriler_Click(object sender, EventArgs e)
+        {
+            FrmMusteriler fr = new FrmMusteriler();
+            fr.Show();
+        }
     }
 }
