@@ -52,7 +52,7 @@
     <Compile Include="FrmMusteriler.Designer.cs">
       <DependentUpon>FrmMusteriler.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kullanici.cs" />
+    <Compile Include="Personel.cs" />
     <Compile Include="Musteri.cs" />
     <Compile Include="sqlbaglantisi.cs" />
     <Compile Include="FrmAnaForm.cs">

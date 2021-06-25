@@ -19,25 +19,25 @@ namespace PansiyonKayitUygulamasi
         }
 
         sqlbaglantisi bgl = new sqlbaglantisi();
-        Kullanici kullanici = new Kullanici();
+        Personel personel = new Personel();
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            var result = new List<Kullanici>(); //liste oluşturduk         
+            var result = new List<Personel>(); //liste oluşturduk         
 
-            SqlCommand cmd = new SqlCommand("select Kullanici_Adi,Kullanici_Sifre from Tbl_Kullanicilar", bgl.baglanti());
+            SqlCommand cmd = new SqlCommand("select Personel_Adi,Personel_Sifre from Tbl_Personel", bgl.baglanti());
      
             SqlDataAdapter da = new SqlDataAdapter(cmd);            
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            result = dt.AsEnumerable().Select(s => new Kullanici
+            result = dt.AsEnumerable().Select(s => new Personel
             {
-                Kullanici_Adi1 = s.Field<string>("Kullanici_Adi"),
-                Kullanici_Sifre1 = s.Field<string>("Kullanici_Sifre")
+                Personel_Adi1 = s.Field<string>("Personel_Adi"),
+                Personel_Sifre1 = s.Field<string>("Personel_Sifre")
             }).ToList();
 
-            var user = result.FirstOrDefault(x => x.Kullanici_Adi1 == txtKullaniciAdi.Text && x.Kullanici_Sifre1 == txtKullaniciSifre.Text);
+            var user = result.FirstOrDefault(x => x.Personel_Adi1 == txtKullaniciAdi.Text && x.Personel_Sifre1 == txtKullaniciSifre.Text);
             if (user != null)
             {
                 MessageBox.Show("Giriş başarılı Ana Sayfaya Hoş Geldiniz");

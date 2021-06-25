@@ -62,6 +62,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSeaGreen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 214);
@@ -119,10 +120,12 @@ namespace PansiyonKayitUygulamasi
             this.btnAra.TabIndex = 5;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // txtArama
             // 
             this.txtArama.Location = new System.Drawing.Point(760, 182);
+            this.txtArama.MaxLength = 11;
             this.txtArama.Name = "txtArama";
             this.txtArama.Size = new System.Drawing.Size(142, 27);
             this.txtArama.TabIndex = 6;
@@ -299,9 +302,9 @@ namespace PansiyonKayitUygulamasi
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(672, 182);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 19);
+            this.label11.Size = new System.Drawing.Size(29, 19);
             this.label11.TabIndex = 49;
-            this.label11.Text = "İsim:";
+            this.label11.Text = "Tc:";
             // 
             // FrmMusteriler
             // 

@@ -42,7 +42,8 @@ namespace PansiyonKayitUygulamasi
             txtOdaNo.Clear();      
             txtUcret.Clear();      
             dtpGirisTarihi.Text = "";
-            dtpCikisTarihi.Text = ""; 
+            dtpCikisTarihi.Text = "";
+            txtArama.Clear();
         }
 
         private void btnListele_Click(object sender, EventArgs e)
@@ -133,6 +134,17 @@ namespace PansiyonKayitUygulamasi
             }
             bgl.baglanti().Close();
             
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            SqlCommand aramakomutu = new SqlCommand("Select * from Tbl_Musteri where Tc=@Tc",bgl.baglanti());
+            aramakomutu.Parameters.AddWithValue("@Tc", txtArama.Text);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(aramakomutu);
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }
