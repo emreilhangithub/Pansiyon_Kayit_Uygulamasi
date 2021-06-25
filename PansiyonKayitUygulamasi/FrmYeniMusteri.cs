@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PansiyonKayitUygulamasi
 {
@@ -16,6 +17,9 @@ namespace PansiyonKayitUygulamasi
         {
             InitializeComponent();
         }
+
+        sqlbaglantisi bgl = new sqlbaglantisi();
+        Musteri musteri = new Musteri();
 
         private void btnOda101_Click(object sender, EventArgs e)
         {
@@ -87,6 +91,46 @@ namespace PansiyonKayitUygulamasi
 
             ucret = Convert.ToInt32(lblToplamGun.Text) * 50;
             txtUcret.Text = ucret.ToString();
+
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            musteri.Ad1          = txtAd.Text;
+            musteri.Soyad1       = txtSoyad.Text;
+            musteri.Cinsiyet1    = cmbCinsiyet.Text;
+            musteri.Telefon1     = mskTelefon.Text;
+            musteri.Mail1        = txtMail.Text;
+            musteri.Tc1          = txtTc.Text;
+            musteri.OdaNo1       = txtOdaNo.Text;
+            musteri.Ucret1       = decimal.Parse(txtUcret.Text);
+            musteri.GirisTarihi1 = DateTime.Parse(dtpGirisTarihi.Text);
+            musteri.CikisTarihi1 = DateTime.Parse(dtpCikisTarihi.Text);
+            //lblToplamGun.Text = dtpCikisTarihi.Value.ToString("yyyy-MM-dd");
+            //lblToplamGun.Text = musteri.GirisTarihi1.ToString();
+
+            SqlCommand kaydetkomutu = new SqlCommand("insert into Tbl_MusteriEkle (Ad,Soyad,Cinsiyet,Telefon,Mail,Tc,OdaNo,Ucret,GirisTarihi,CikisTarihi) values(@Ad,@Soyad,@Cinsiyet,@Telefon,@Mail,@Tc,@OdaNo,@Ucret,@GirisTarihi,@CikisTarihi)", bgl.baglanti());
+            kaydetkomutu.Parameters.AddWithValue("@Ad", musteri.Ad1);
+            kaydetkomutu.Parameters.AddWithValue("@Soyad", musteri.Soyad1);
+            kaydetkomutu.Parameters.AddWithValue("@Cinsiyet", musteri.Cinsiyet1);
+            kaydetkomutu.Parameters.AddWithValue("@Telefon", musteri.Telefon1);
+            kaydetkomutu.Parameters.AddWithValue("@Mail", musteri.Mail1);
+            kaydetkomutu.Parameters.AddWithValue("@Tc", musteri.Tc1);
+            kaydetkomutu.Parameters.AddWithValue("@OdaNo", musteri.OdaNo1);
+            kaydetkomutu.Parameters.AddWithValue("@Ucret", musteri.Ucret1);
+            kaydetkomutu.Parameters.AddWithValue("@GirisTarihi", musteri.GirisTarihi1);
+            kaydetkomutu.Parameters.AddWithValue("@CikisTarihi", musteri.CikisTarihi1);             
+
+            int etkilenen = kaydetkomutu.ExecuteNonQuery();
+            if (etkilenen > 0)
+            {
+                MessageBox.Show("Güncelleme Başarılı");
+            }
+            else
+            {
+                MessageBox.Show("Günceleme işlemi başarısız!!!!!!!!!");
+            }
+            bgl.baglanti().Close();
 
         }
     }

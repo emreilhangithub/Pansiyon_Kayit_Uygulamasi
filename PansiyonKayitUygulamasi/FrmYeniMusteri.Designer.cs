@@ -30,6 +30,7 @@ namespace PansiyonKayitUygulamasi
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblToplamGun = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
             this.txtUcret = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@ namespace PansiyonKayitUygulamasi
             this.dtpCikisTarihi = new System.Windows.Forms.DateTimePicker();
             this.dtpGirisTarihi = new System.Windows.Forms.DateTimePicker();
             this.btnKaydet = new System.Windows.Forms.Button();
-            this.mskTc = new System.Windows.Forms.MaskedTextBox();
             this.mskTelefon = new System.Windows.Forms.MaskedTextBox();
             this.txtOdaNo = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
@@ -63,13 +63,14 @@ namespace PansiyonKayitUygulamasi
             this.btnOda101 = new System.Windows.Forms.Button();
             this.btnDoluOda = new System.Windows.Forms.Button();
             this.btnBosOda = new System.Windows.Forms.Button();
-            this.lblToplamGun = new System.Windows.Forms.Label();
+            this.txtTc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTc);
             this.groupBox1.Controls.Add(this.lblToplamGun);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cmbCinsiyet);
@@ -78,7 +79,6 @@ namespace PansiyonKayitUygulamasi
             this.groupBox1.Controls.Add(this.dtpCikisTarihi);
             this.groupBox1.Controls.Add(this.dtpGirisTarihi);
             this.groupBox1.Controls.Add(this.btnKaydet);
-            this.groupBox1.Controls.Add(this.mskTc);
             this.groupBox1.Controls.Add(this.mskTelefon);
             this.groupBox1.Controls.Add(this.txtOdaNo);
             this.groupBox1.Controls.Add(this.txtMail);
@@ -98,6 +98,15 @@ namespace PansiyonKayitUygulamasi
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Bilgileri";
+            // 
+            // lblToplamGun
+            // 
+            this.lblToplamGun.AutoSize = true;
+            this.lblToplamGun.Location = new System.Drawing.Point(119, 341);
+            this.lblToplamGun.Name = "lblToplamGun";
+            this.lblToplamGun.Size = new System.Drawing.Size(92, 19);
+            this.lblToplamGun.TabIndex = 27;
+            this.lblToplamGun.Text = "Toplam Gün";
             // 
             // label10
             // 
@@ -158,15 +167,7 @@ namespace PansiyonKayitUygulamasi
             this.btnKaydet.TabIndex = 19;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
-            // 
-            // mskTc
-            // 
-            this.mskTc.Location = new System.Drawing.Point(123, 178);
-            this.mskTc.Mask = "00000000000";
-            this.mskTc.Name = "mskTc";
-            this.mskTc.Size = new System.Drawing.Size(233, 27);
-            this.mskTc.TabIndex = 18;
-            this.mskTc.ValidatingType = typeof(int);
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // mskTelefon
             // 
@@ -416,14 +417,13 @@ namespace PansiyonKayitUygulamasi
             this.btnBosOda.UseVisualStyleBackColor = false;
             this.btnBosOda.Click += new System.EventHandler(this.btnBosOda_Click);
             // 
-            // lblToplamGun
+            // txtTc
             // 
-            this.lblToplamGun.AutoSize = true;
-            this.lblToplamGun.Location = new System.Drawing.Point(119, 341);
-            this.lblToplamGun.Name = "lblToplamGun";
-            this.lblToplamGun.Size = new System.Drawing.Size(92, 19);
-            this.lblToplamGun.TabIndex = 27;
-            this.lblToplamGun.Text = "Toplam Gün";
+            this.txtTc.Location = new System.Drawing.Point(123, 180);
+            this.txtTc.MaxLength = 11;
+            this.txtTc.Name = "txtTc";
+            this.txtTc.Size = new System.Drawing.Size(233, 27);
+            this.txtTc.TabIndex = 28;
             // 
             // FrmYeniMusteri
             // 
@@ -478,7 +478,6 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.TextBox txtOdaNo;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.MaskedTextBox mskTelefon;
-        private System.Windows.Forms.MaskedTextBox mskTc;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.DateTimePicker dtpCikisTarihi;
         private System.Windows.Forms.DateTimePicker dtpGirisTarihi;
@@ -487,5 +486,6 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbCinsiyet;
         private System.Windows.Forms.Label lblToplamGun;
+        private System.Windows.Forms.TextBox txtTc;
     }
 }
