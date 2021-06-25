@@ -1,7 +1,7 @@
 ﻿
 namespace PansiyonKayitUygulamasi
 {
-    partial class Form1
+    partial class FrmGirisPaneli
     {
         /// <summary>
         /// Required designer variable.
@@ -59,7 +59,7 @@ namespace PansiyonKayitUygulamasi
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.Location = new System.Drawing.Point(179, 22);
-            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(83, 27);
             this.txtKullaniciAdi.TabIndex = 2;
@@ -67,7 +67,7 @@ namespace PansiyonKayitUygulamasi
             // txtKullaniciSifre
             // 
             this.txtKullaniciSifre.Location = new System.Drawing.Point(179, 59);
-            this.txtKullaniciSifre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKullaniciSifre.Margin = new System.Windows.Forms.Padding(2);
             this.txtKullaniciSifre.Name = "txtKullaniciSifre";
             this.txtKullaniciSifre.Size = new System.Drawing.Size(83, 27);
             this.txtKullaniciSifre.TabIndex = 3;
@@ -75,17 +75,18 @@ namespace PansiyonKayitUygulamasi
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(108, 100);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 31);
             this.button1.TabIndex = 4;
             this.button1.Text = "Giriş Yap";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FrmGirisPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(330, 152);
             this.Controls.Add(this.button1);
@@ -96,7 +97,7 @@ namespace PansiyonKayitUygulamasi
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrmGirisPaneli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Giriş";
             this.ResumeLayout(false);
