@@ -30,6 +30,21 @@ namespace PansiyonKayitUygulamasi
             dataGridView1.DataSource = dt;
         }
 
+        void temizle()
+        {
+            musteri.Musteri_Id1 = 0;
+            txtAd.Clear();
+            txtSoyad.Clear();
+            cmbCinsiyet.Text = "";   
+            mskTelefon.Clear();    
+            txtMail.Clear();       
+            txtTc.Clear();         
+            txtOdaNo.Clear();      
+            txtUcret.Clear();      
+            dtpGirisTarihi.Text = "";
+            dtpCikisTarihi.Text = ""; 
+        }
+
         private void btnListele_Click(object sender, EventArgs e)
         {
             listele();
@@ -49,6 +64,31 @@ namespace PansiyonKayitUygulamasi
             dtpGirisTarihi.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
             dtpCikisTarihi.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
             //txtArama.Text = musteri.Musteri_Id1.ToString();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            SqlCommand silmekomutu = new SqlCommand("DELETE FROM Tbl_Musteri WHERE Musteri_Id=@Musteri_Id", bgl.baglanti());
+            silmekomutu.Parameters.AddWithValue("@Musteri_Id",musteri.Musteri_Id1);
+
+            int etkilenen = silmekomutu.ExecuteNonQuery();
+            if (etkilenen > 0)
+            {
+                MessageBox.Show("Silme Başarılı");
+            }
+            else
+            {
+                MessageBox.Show("Silme işlemi başarısız!!!!!!!!!");
+            }
+            bgl.baglanti().Close();
+            listele();
+            temizle();
+
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+           temizle();
         }
     }
 }
