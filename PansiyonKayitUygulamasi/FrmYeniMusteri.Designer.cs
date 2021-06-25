@@ -120,6 +120,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda101.TabIndex = 0;
             this.btnOda101.Text = "101";
             this.btnOda101.UseVisualStyleBackColor = false;
+            this.btnOda101.Click += new System.EventHandler(this.btnOda101_Click);
             // 
             // btnOda102
             // 
@@ -130,6 +131,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda102.TabIndex = 1;
             this.btnOda102.Text = "102";
             this.btnOda102.UseVisualStyleBackColor = false;
+            this.btnOda102.Click += new System.EventHandler(this.btnOda102_Click);
             // 
             // btnOda103
             // 
@@ -140,6 +142,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda103.TabIndex = 2;
             this.btnOda103.Text = "103";
             this.btnOda103.UseVisualStyleBackColor = false;
+            this.btnOda103.Click += new System.EventHandler(this.btnOda103_Click);
             // 
             // btnOda106
             // 
@@ -150,6 +153,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda106.TabIndex = 5;
             this.btnOda106.Text = "106";
             this.btnOda106.UseVisualStyleBackColor = false;
+            this.btnOda106.Click += new System.EventHandler(this.btnOda106_Click);
             // 
             // btnOda105
             // 
@@ -160,6 +164,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda105.TabIndex = 4;
             this.btnOda105.Text = "105";
             this.btnOda105.UseVisualStyleBackColor = false;
+            this.btnOda105.Click += new System.EventHandler(this.btnOda105_Click);
             // 
             // btnOda104
             // 
@@ -170,6 +175,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda104.TabIndex = 3;
             this.btnOda104.Text = "104";
             this.btnOda104.UseVisualStyleBackColor = false;
+            this.btnOda104.Click += new System.EventHandler(this.btnOda104_Click);
             // 
             // btnOda109
             // 
@@ -180,6 +186,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda109.TabIndex = 8;
             this.btnOda109.Text = "109";
             this.btnOda109.UseVisualStyleBackColor = false;
+            this.btnOda109.Click += new System.EventHandler(this.btnOda109_Click);
             // 
             // btnOda108
             // 
@@ -190,6 +197,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda108.TabIndex = 7;
             this.btnOda108.Text = "108";
             this.btnOda108.UseVisualStyleBackColor = false;
+            this.btnOda108.Click += new System.EventHandler(this.btnOda108_Click);
             // 
             // btnOda107
             // 
@@ -200,6 +208,7 @@ namespace PansiyonKayitUygulamasi
             this.btnOda107.TabIndex = 6;
             this.btnOda107.Text = "107";
             this.btnOda107.UseVisualStyleBackColor = false;
+            this.btnOda107.Click += new System.EventHandler(this.btnOda107_Click);
             // 
             // btnDoluOda
             // 
@@ -210,6 +219,7 @@ namespace PansiyonKayitUygulamasi
             this.btnDoluOda.TabIndex = 9;
             this.btnDoluOda.Text = "Dolu";
             this.btnDoluOda.UseVisualStyleBackColor = false;
+            this.btnDoluOda.Click += new System.EventHandler(this.btnDoluOda_Click);
             // 
             // btnBosOda
             // 
@@ -220,6 +230,7 @@ namespace PansiyonKayitUygulamasi
             this.btnBosOda.TabIndex = 10;
             this.btnBosOda.Text = "Boş";
             this.btnBosOda.UseVisualStyleBackColor = false;
+            this.btnBosOda.Click += new System.EventHandler(this.btnBosOda_Click);
             // 
             // label1
             // 
@@ -316,6 +327,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // txtOdaNo
             // 
+            this.txtOdaNo.Enabled = false;
             this.txtOdaNo.Location = new System.Drawing.Point(123, 171);
             this.txtOdaNo.Name = "txtOdaNo";
             this.txtOdaNo.Size = new System.Drawing.Size(233, 27);
