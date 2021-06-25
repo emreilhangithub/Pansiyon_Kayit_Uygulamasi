@@ -41,5 +41,12 @@ namespace PansiyonKayitUygulamasi
             FrmMusteriler fr = new FrmMusteriler();
             fr.Show();
         }
+
+        private void btnHakkimizda_Click(object sender, EventArgs e)
+        {
+            string mesaj = "Bu Program Mustafa Emre İlhan tarafından yazılmıştır";
+            string tarih = "25.06.2021";
+            MessageBox.Show(mesaj+" "+tarih);
+        }
     }
 }

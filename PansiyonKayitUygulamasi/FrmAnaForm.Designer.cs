@@ -33,6 +33,11 @@ namespace PansiyonKayitUygulamasi
             this.btnYeniMusteri = new System.Windows.Forms.Button();
             this.btnOdalar = new System.Windows.Forms.Button();
             this.btnMusteriler = new System.Windows.Forms.Button();
+            this.btnPersonelMaas = new System.Windows.Forms.Button();
+            this.btnStok = new System.Windows.Forms.Button();
+            this.btnMusteriMesaj = new System.Windows.Forms.Button();
+            this.btnRadyo = new System.Windows.Forms.Button();
+            this.btnHakkimizda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdminGiris
@@ -49,7 +54,7 @@ namespace PansiyonKayitUygulamasi
             // btnYeniMusteri
             // 
             this.btnYeniMusteri.BackColor = System.Drawing.Color.Yellow;
-            this.btnYeniMusteri.Location = new System.Drawing.Point(141, 25);
+            this.btnYeniMusteri.Location = new System.Drawing.Point(224, 25);
             this.btnYeniMusteri.Name = "btnYeniMusteri";
             this.btnYeniMusteri.Size = new System.Drawing.Size(96, 58);
             this.btnYeniMusteri.TabIndex = 1;
@@ -60,7 +65,7 @@ namespace PansiyonKayitUygulamasi
             // btnOdalar
             // 
             this.btnOdalar.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnOdalar.Location = new System.Drawing.Point(266, 25);
+            this.btnOdalar.Location = new System.Drawing.Point(420, 25);
             this.btnOdalar.Name = "btnOdalar";
             this.btnOdalar.Size = new System.Drawing.Size(96, 58);
             this.btnOdalar.TabIndex = 2;
@@ -71,7 +76,7 @@ namespace PansiyonKayitUygulamasi
             // btnMusteriler
             // 
             this.btnMusteriler.BackColor = System.Drawing.Color.Orange;
-            this.btnMusteriler.Location = new System.Drawing.Point(386, 25);
+            this.btnMusteriler.Location = new System.Drawing.Point(22, 144);
             this.btnMusteriler.Name = "btnMusteriler";
             this.btnMusteriler.Size = new System.Drawing.Size(96, 58);
             this.btnMusteriler.TabIndex = 3;
@@ -79,12 +84,68 @@ namespace PansiyonKayitUygulamasi
             this.btnMusteriler.UseVisualStyleBackColor = false;
             this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
             // 
+            // btnPersonelMaas
+            // 
+            this.btnPersonelMaas.BackColor = System.Drawing.Color.Firebrick;
+            this.btnPersonelMaas.Location = new System.Drawing.Point(224, 144);
+            this.btnPersonelMaas.Name = "btnPersonelMaas";
+            this.btnPersonelMaas.Size = new System.Drawing.Size(96, 58);
+            this.btnPersonelMaas.TabIndex = 4;
+            this.btnPersonelMaas.Text = "Personel Mesajları";
+            this.btnPersonelMaas.UseVisualStyleBackColor = false;
+            // 
+            // btnStok
+            // 
+            this.btnStok.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnStok.Location = new System.Drawing.Point(420, 144);
+            this.btnStok.Name = "btnStok";
+            this.btnStok.Size = new System.Drawing.Size(96, 58);
+            this.btnStok.TabIndex = 5;
+            this.btnStok.Text = "Stoklar";
+            this.btnStok.UseVisualStyleBackColor = false;
+            // 
+            // btnMusteriMesaj
+            // 
+            this.btnMusteriMesaj.BackColor = System.Drawing.Color.Magenta;
+            this.btnMusteriMesaj.Location = new System.Drawing.Point(22, 249);
+            this.btnMusteriMesaj.Name = "btnMusteriMesaj";
+            this.btnMusteriMesaj.Size = new System.Drawing.Size(96, 58);
+            this.btnMusteriMesaj.TabIndex = 6;
+            this.btnMusteriMesaj.Text = "Müşteri Mesajları";
+            this.btnMusteriMesaj.UseVisualStyleBackColor = false;
+            // 
+            // btnRadyo
+            // 
+            this.btnRadyo.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnRadyo.Location = new System.Drawing.Point(224, 249);
+            this.btnRadyo.Name = "btnRadyo";
+            this.btnRadyo.Size = new System.Drawing.Size(96, 58);
+            this.btnRadyo.TabIndex = 7;
+            this.btnRadyo.Text = "Radyo Dinle";
+            this.btnRadyo.UseVisualStyleBackColor = false;
+            // 
+            // btnHakkimizda
+            // 
+            this.btnHakkimizda.BackColor = System.Drawing.Color.SlateGray;
+            this.btnHakkimizda.Location = new System.Drawing.Point(420, 249);
+            this.btnHakkimizda.Name = "btnHakkimizda";
+            this.btnHakkimizda.Size = new System.Drawing.Size(96, 58);
+            this.btnHakkimizda.TabIndex = 8;
+            this.btnHakkimizda.Text = "Hakkımızda";
+            this.btnHakkimizda.UseVisualStyleBackColor = false;
+            this.btnHakkimizda.Click += new System.EventHandler(this.btnHakkimizda_Click);
+            // 
             // FrmAnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(606, 319);
+            this.ClientSize = new System.Drawing.Size(528, 319);
+            this.Controls.Add(this.btnHakkimizda);
+            this.Controls.Add(this.btnRadyo);
+            this.Controls.Add(this.btnMusteriMesaj);
+            this.Controls.Add(this.btnStok);
+            this.Controls.Add(this.btnPersonelMaas);
             this.Controls.Add(this.btnMusteriler);
             this.Controls.Add(this.btnOdalar);
             this.Controls.Add(this.btnYeniMusteri);
@@ -104,5 +165,10 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.Button btnYeniMusteri;
         private System.Windows.Forms.Button btnOdalar;
         private System.Windows.Forms.Button btnMusteriler;
+        private System.Windows.Forms.Button btnPersonelMaas;
+        private System.Windows.Forms.Button btnStok;
+        private System.Windows.Forms.Button btnMusteriMesaj;
+        private System.Windows.Forms.Button btnRadyo;
+        private System.Windows.Forms.Button btnHakkimizda;
     }
 }
