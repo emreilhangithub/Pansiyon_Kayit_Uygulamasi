@@ -59,5 +59,16 @@ namespace PansiyonKayitUygulamasi
             frmMusteriCikis fr = new frmMusteriCikis();
             fr.ShowDialog();
         }
+
+        private void FrmAnaForm_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTarih.Text = DateTime.Now.ToLongDateString();
+            lblSaat.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }
