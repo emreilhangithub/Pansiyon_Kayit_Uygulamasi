@@ -21,77 +21,41 @@ namespace PansiyonKayitUygulamasi
         sqlbaglantisi bgl = new sqlbaglantisi();
         Musteri musteri = new Musteri();
 
-        private void btnOda101_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "101";
+        public void odaDurumu()
+        {          
+            List<Odalar> order = new List<Odalar>();
+            DataTable tablo = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select Oda_Numarasi,Oda_Durumu FROM Tbl_Odalar", bgl.baglanti());
+            da.Fill(tablo);
+
+            order = tablo.AsEnumerable().Select(s => new Odalar
+            {
+                Oda_Numarasi = s.Field<string>("Oda_Numarasi"),
+                Oda_Durumu = s.Field<string>("Oda_Durumu")
+            }
+            ).Where(x => x.Oda_Durumu == "BOŞ").ToList();
+
+            cmbOdaNo.DisplayMember = "Oda_Numarasi";
+            cmbOdaNo.ValueMember = "Oda_Numarasi";
+            cmbOdaNo.DataSource = order;
         }
 
-        private void btnOda102_Click(object sender, EventArgs e)
+        void odaGuncelle()
         {
-            txtOdaNo.Text = "102";
-        }
-
-        private void btnOda103_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "103";
-        }
-
-        private void btnOda104_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "104";
-        }
-
-        private void btnOda105_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "105";
-        }
-
-        private void btnOda106_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "106";
-        }
-
-        private void btnOda107_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "107";
-        }
-
-        private void btnOda108_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "108";
-        }
-
-        private void btnOda109_Click(object sender, EventArgs e)
-        {
-            txtOdaNo.Text = "109";
-        }
-
-        private void btnDoluOda_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Kırmızı Renkli Butonlar Dolu Odaları Gösterir");
-        }
-
-        private void btnBosOda_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Yeşil Renkli Butonlar Boş Odaları Gösterir");
-        }
-
-        private void dtpCikisTarihi_ValueChanged(object sender, EventArgs e)
-        {
-            //cıkıs tarihi değeri değiştigi zaman
-            int ucret;
-            DateTime kucukTarih = Convert.ToDateTime(dtpGirisTarihi.Text);
-            DateTime buyukTarih = Convert.ToDateTime(dtpCikisTarihi.Text); //tarih olark tanımladık
-
-            TimeSpan Sonuc;
-            Sonuc = buyukTarih - kucukTarih; //aradaki farkı alır
-
-            lblToplamGun.Text = Sonuc.TotalDays.ToString();
-            //total daysa demezsek 000 ile yazar
-
-            ucret = Convert.ToInt32(lblToplamGun.Text) * 50;
-            txtUcret.Text = ucret.ToString();
-
+            SqlCommand odaguncellekomutu = new SqlCommand("UPDATE Tbl_Odalar SET Oda_Durumu='DOLU' where Oda_Numarasi=@Oda_Numarasi", bgl.baglanti());
+            odaguncellekomutu.Parameters.AddWithValue("@Oda_Numarasi", musteri.OdaNo1);
+            int etkilenen = odaguncellekomutu.ExecuteNonQuery();
+            if (etkilenen > 0)
+            {
+                MessageBox.Show("Oda Durumu Güncellemesi Başarılı");
+            }
+            else
+            {
+                MessageBox.Show("Günceleme işlemi başarısız!!!!!!!!!");
+            }           
+           
+            odaDurumu();            
+            bgl.baglanti().Close();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -102,14 +66,10 @@ namespace PansiyonKayitUygulamasi
             musteri.Telefon1     = mskTelefon.Text;
             musteri.Mail1        = txtMail.Text;
             musteri.Tc1          = txtTc.Text;
-            musteri.OdaNo1       = txtOdaNo.Text;
-            musteri.Ucret1       = decimal.Parse(txtUcret.Text);
+            musteri.OdaNo1       = cmbOdaNo.Text;
             musteri.GirisTarihi1 = DateTime.Parse(dtpGirisTarihi.Text);
-            musteri.CikisTarihi1 = DateTime.Parse(dtpCikisTarihi.Text);
-            //lblToplamGun.Text = dtpCikisTarihi.Value.ToString("yyyy-MM-dd");
-            //lblToplamGun.Text = musteri.GirisTarihi1.ToString();
 
-            SqlCommand kaydetkomutu = new SqlCommand("insert into Tbl_MusteriEkle (Ad,Soyad,Cinsiyet,Telefon,Mail,Tc,OdaNo,Ucret,GirisTarihi,CikisTarihi) values(@Ad,@Soyad,@Cinsiyet,@Telefon,@Mail,@Tc,@OdaNo,@Ucret,@GirisTarihi,@CikisTarihi)", bgl.baglanti());
+            SqlCommand kaydetkomutu = new SqlCommand("insert into Tbl_Musteri (Ad,Soyad,Cinsiyet,Telefon,Mail,Tc,OdaNo,GirisTarihi) values(@Ad,@Soyad,@Cinsiyet,@Telefon,@Mail,@Tc,@OdaNo,@GirisTarihi)", bgl.baglanti());
             kaydetkomutu.Parameters.AddWithValue("@Ad", musteri.Ad1);
             kaydetkomutu.Parameters.AddWithValue("@Soyad", musteri.Soyad1);
             kaydetkomutu.Parameters.AddWithValue("@Cinsiyet", musteri.Cinsiyet1);
@@ -117,21 +77,27 @@ namespace PansiyonKayitUygulamasi
             kaydetkomutu.Parameters.AddWithValue("@Mail", musteri.Mail1);
             kaydetkomutu.Parameters.AddWithValue("@Tc", musteri.Tc1);
             kaydetkomutu.Parameters.AddWithValue("@OdaNo", musteri.OdaNo1);
-            kaydetkomutu.Parameters.AddWithValue("@Ucret", musteri.Ucret1);
-            kaydetkomutu.Parameters.AddWithValue("@GirisTarihi", musteri.GirisTarihi1);
-            kaydetkomutu.Parameters.AddWithValue("@CikisTarihi", musteri.CikisTarihi1);             
+            kaydetkomutu.Parameters.AddWithValue("@GirisTarihi", musteri.GirisTarihi1);            
 
             int etkilenen = kaydetkomutu.ExecuteNonQuery();
             if (etkilenen > 0)
             {
-                MessageBox.Show("Güncelleme Başarılı");
+                MessageBox.Show("Kayıt Başarılı");
             }
             else
             {
-                MessageBox.Show("Günceleme işlemi başarısız!!!!!!!!!");
+                MessageBox.Show("Kayıt işlemi başarısız!!!!!!!!!");
             }
             bgl.baglanti().Close();
+            odaGuncelle();        
 
         }
+
+        private void FrmYeniMusteri_Load(object sender, EventArgs e)
+        {
+            odaDurumu();
+        }
+
+
     }
 }

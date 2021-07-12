@@ -16,9 +16,8 @@ namespace PansiyonKayitUygulamasi
         private string Mail;
         private string Tc;
         private string OdaNo;
-        private decimal Ucret;
         private DateTime GirisTarihi;
-        private DateTime CikisTarihi;
+
 
         public int Musteri_Id1 { get => Musteri_Id; set => Musteri_Id = value; }
         public string Ad1 { get => Ad; set => Ad = value; }
@@ -28,8 +27,6 @@ namespace PansiyonKayitUygulamasi
         public string Mail1 { get => Mail; set => Mail = value; }
         public string Tc1 { get => Tc; set => Tc = value; }
         public string OdaNo1 { get => OdaNo; set => OdaNo = value; }
-        public decimal Ucret1 { get => Ucret; set => Ucret = value; }
         public DateTime GirisTarihi1 { get => GirisTarihi; set => GirisTarihi = value; }
-        public DateTime CikisTarihi1 { get => CikisTarihi; set => CikisTarihi = value; }
     }
 }

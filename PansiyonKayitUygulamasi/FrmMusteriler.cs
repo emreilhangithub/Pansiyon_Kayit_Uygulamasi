@@ -23,11 +23,26 @@ namespace PansiyonKayitUygulamasi
         }
 
         void listele()
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("Select * from Tbl_Musteri ", bgl.baglanti());
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
+        {                   
+            List<Musteri> musteriListele = new List<Musteri>();
+            DataTable tablo = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select  [Musteri_Id],[Ad],[Soyad],[Cinsiyet],[Telefon],[Mail],[Tc] from Tbl_Musteri ", bgl.baglanti());
+            da.Fill(tablo);
+
+            musteriListele = tablo.AsEnumerable().Select(s => new Musteri
+            {
+                Musteri_Id1 = s.Field<int>("Musteri_Id"),
+                Ad1 = s.Field<string>("Ad"),
+                Soyad1 = s.Field<string>("Soyad"),
+                Cinsiyet1 = s.Field<string>("Cinsiyet"),
+                Telefon1 = s.Field<string>("Telefon"),
+                Mail1 = s.Field<string>("Mail"),
+                Tc1 = s.Field<string>("Tc")
+            }
+          ).ToList();
+
+
+            dataGridView1.DataSource = musteriListele;
         }
 
         void temizle()
@@ -38,11 +53,7 @@ namespace PansiyonKayitUygulamasi
             cmbCinsiyet.Text = "";   
             mskTelefon.Clear();    
             txtMail.Clear();       
-            txtTc.Clear();         
-            txtOdaNo.Clear();      
-            txtUcret.Clear();      
-            dtpGirisTarihi.Text = "";
-            dtpCikisTarihi.Text = "";
+            txtTc.Clear();             
             txtArama.Clear();
         }
 
@@ -59,33 +70,8 @@ namespace PansiyonKayitUygulamasi
             cmbCinsiyet.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             mskTelefon.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtMail.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtTc.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtOdaNo.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtUcret.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-            dtpGirisTarihi.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-            dtpCikisTarihi.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+            txtTc.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();       
             //txtArama.Text = musteri.Musteri_Id1.ToString();
-        }
-
-        private void btnSil_Click(object sender, EventArgs e)
-        {
-            SqlCommand silmekomutu = new SqlCommand("DELETE FROM Tbl_Musteri WHERE Musteri_Id=@Musteri_Id", bgl.baglanti());
-            silmekomutu.Parameters.AddWithValue("@Musteri_Id",musteri.Musteri_Id1);
-
-            int etkilenen = silmekomutu.ExecuteNonQuery();
-            if (etkilenen > 0)
-            {
-                MessageBox.Show("Silme Başarılı");
-                listele();
-                temizle();
-            }
-            else
-            {
-                MessageBox.Show("Silme işlemi başarısız!!!!!!!!!");
-            }
-            bgl.baglanti().Close();
-            
-
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
@@ -101,24 +87,16 @@ namespace PansiyonKayitUygulamasi
             musteri.Telefon1 = mskTelefon.Text;
             musteri.Mail1 = txtMail.Text;
             musteri.Tc1 = txtTc.Text;
-            musteri.OdaNo1 = txtOdaNo.Text;
-            musteri.Ucret1 = decimal.Parse(txtUcret.Text);
-            musteri.GirisTarihi1 = DateTime.Parse(dtpGirisTarihi.Text);
-            musteri.CikisTarihi1 = DateTime.Parse(dtpCikisTarihi.Text);
             //lblToplamGun.Text = dtpCikisTarihi.Value.ToString("yyyy-MM-dd");
             //lblToplamGun.Text = musteri.GirisTarihi1.ToString();
 
-            SqlCommand guncellemekomutu = new SqlCommand("UPDATE Tbl_Musteri  SET Ad=@Ad,Soyad=@Soyad,Cinsiyet=@Cinsiyet,Telefon=@Telefon,Mail=@Mail,Tc=@Tc,OdaNo=@OdaNo,Ucret=@Ucret,GirisTarihi=@GirisTarihi,CikisTarihi=@CikisTarihi where Musteri_Id=@Musteri_Id", bgl.baglanti());
+            SqlCommand guncellemekomutu = new SqlCommand("UPDATE Tbl_Musteri  SET Ad=@Ad,Soyad=@Soyad,Cinsiyet=@Cinsiyet,Telefon=@Telefon,Mail=@Mail,Tc=@Tc where Musteri_Id=@Musteri_Id", bgl.baglanti());
             guncellemekomutu.Parameters.AddWithValue("@Ad", musteri.Ad1);
             guncellemekomutu.Parameters.AddWithValue("@Soyad", musteri.Soyad1);
             guncellemekomutu.Parameters.AddWithValue("@Cinsiyet", musteri.Cinsiyet1);
             guncellemekomutu.Parameters.AddWithValue("@Telefon", musteri.Telefon1);
             guncellemekomutu.Parameters.AddWithValue("@Mail", musteri.Mail1);
             guncellemekomutu.Parameters.AddWithValue("@Tc", musteri.Tc1);
-            guncellemekomutu.Parameters.AddWithValue("@OdaNo", musteri.OdaNo1);
-            guncellemekomutu.Parameters.AddWithValue("@Ucret", musteri.Ucret1);
-            guncellemekomutu.Parameters.AddWithValue("@GirisTarihi", musteri.GirisTarihi1);
-            guncellemekomutu.Parameters.AddWithValue("@CikisTarihi", musteri.CikisTarihi1);
             guncellemekomutu.Parameters.AddWithValue("@Musteri_Id", musteri.Musteri_Id1);
 
             int etkilenen = guncellemekomutu.ExecuteNonQuery();
@@ -138,13 +116,43 @@ namespace PansiyonKayitUygulamasi
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            SqlCommand aramakomutu = new SqlCommand("Select * from Tbl_Musteri where Tc=@Tc",bgl.baglanti());
-            aramakomutu.Parameters.AddWithValue("@Tc", txtArama.Text);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(aramakomutu);
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            musteri.Tc1 = txtArama.Text;
+
+            List<Musteri> musteriAra = new List<Musteri>();
+            DataTable tablo = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select  [Musteri_Id],[Ad],[Soyad],[Cinsiyet],[Telefon],[Mail],[Tc] from Tbl_Musteri ", bgl.baglanti());
+            da.Fill(tablo);
+
+            musteriAra = tablo.AsEnumerable().Select(s => new Musteri
+            {
+                Musteri_Id1 = s.Field<int>("Musteri_Id"),
+                Ad1 = s.Field<string>("Ad"),
+                Soyad1 = s.Field<string>("Soyad"),
+                Cinsiyet1 = s.Field<string>("Cinsiyet"),
+                Telefon1 = s.Field<string>("Telefon"),
+                Mail1 = s.Field<string>("Mail"),
+                Tc1 = s.Field<string>("Tc")
+            }
+          ).Where(s=> s.Tc1.Contains(musteri.Tc1)).ToList();
+
+
+            dataGridView1.DataSource = musteriAra;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

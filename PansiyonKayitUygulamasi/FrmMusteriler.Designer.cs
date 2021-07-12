@@ -32,25 +32,16 @@ namespace PansiyonKayitUygulamasi
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnListele = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnAra = new System.Windows.Forms.Button();
             this.txtArama = new System.Windows.Forms.TextBox();
             this.txtTc = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
-            this.txtUcret = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtpCikisTarihi = new System.Windows.Forms.DateTimePicker();
-            this.dtpGirisTarihi = new System.Windows.Forms.DateTimePicker();
             this.mskTelefon = new System.Windows.Forms.MaskedTextBox();
-            this.txtOdaNo = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,16 +56,16 @@ namespace PansiyonKayitUygulamasi
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSeaGreen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 214);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 198);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(914, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(624, 247);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(760, 2);
+            this.btnListele.Location = new System.Drawing.Point(471, 2);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(142, 30);
             this.btnListele.TabIndex = 1;
@@ -84,7 +75,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(760, 38);
+            this.btnGuncelle.Location = new System.Drawing.Point(471, 38);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(142, 30);
             this.btnGuncelle.TabIndex = 2;
@@ -92,19 +83,9 @@ namespace PansiyonKayitUygulamasi
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
-            // btnSil
-            // 
-            this.btnSil.Location = new System.Drawing.Point(760, 74);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(142, 30);
-            this.btnSil.TabIndex = 3;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(760, 110);
+            this.btnTemizle.Location = new System.Drawing.Point(471, 76);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(142, 30);
             this.btnTemizle.TabIndex = 4;
@@ -114,7 +95,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(760, 146);
+            this.btnAra.Location = new System.Drawing.Point(471, 145);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(142, 30);
             this.btnAra.TabIndex = 5;
@@ -124,7 +105,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // txtArama
             // 
-            this.txtArama.Location = new System.Drawing.Point(760, 182);
+            this.txtArama.Location = new System.Drawing.Point(471, 112);
             this.txtArama.MaxLength = 11;
             this.txtArama.Name = "txtArama";
             this.txtArama.Size = new System.Drawing.Size(142, 27);
@@ -158,36 +139,6 @@ namespace PansiyonKayitUygulamasi
             this.cmbCinsiyet.Size = new System.Drawing.Size(233, 27);
             this.cmbCinsiyet.TabIndex = 46;
             // 
-            // txtUcret
-            // 
-            this.txtUcret.Location = new System.Drawing.Point(488, 41);
-            this.txtUcret.Name = "txtUcret";
-            this.txtUcret.Size = new System.Drawing.Size(233, 27);
-            this.txtUcret.TabIndex = 45;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(430, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 19);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Ücret:";
-            // 
-            // dtpCikisTarihi
-            // 
-            this.dtpCikisTarihi.Location = new System.Drawing.Point(488, 108);
-            this.dtpCikisTarihi.Name = "dtpCikisTarihi";
-            this.dtpCikisTarihi.Size = new System.Drawing.Size(233, 27);
-            this.dtpCikisTarihi.TabIndex = 43;
-            // 
-            // dtpGirisTarihi
-            // 
-            this.dtpGirisTarihi.Location = new System.Drawing.Point(488, 74);
-            this.dtpGirisTarihi.Name = "dtpGirisTarihi";
-            this.dtpGirisTarihi.Size = new System.Drawing.Size(233, 27);
-            this.dtpGirisTarihi.TabIndex = 42;
-            // 
             // mskTelefon
             // 
             this.mskTelefon.Location = new System.Drawing.Point(121, 104);
@@ -195,14 +146,6 @@ namespace PansiyonKayitUygulamasi
             this.mskTelefon.Name = "mskTelefon";
             this.mskTelefon.Size = new System.Drawing.Size(233, 27);
             this.mskTelefon.TabIndex = 41;
-            // 
-            // txtOdaNo
-            // 
-            this.txtOdaNo.Enabled = false;
-            this.txtOdaNo.Location = new System.Drawing.Point(488, 6);
-            this.txtOdaNo.Name = "txtOdaNo";
-            this.txtOdaNo.Size = new System.Drawing.Size(233, 27);
-            this.txtOdaNo.TabIndex = 40;
             // 
             // txtMail
             // 
@@ -224,33 +167,6 @@ namespace PansiyonKayitUygulamasi
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(233, 27);
             this.txtAd.TabIndex = 37;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(400, 110);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 19);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Çıkış Tarihi";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(395, 74);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 19);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Giriş Tarihi:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(368, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 19);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Oda Numarası:";
             // 
             // label5
             // 
@@ -300,7 +216,7 @@ namespace PansiyonKayitUygulamasi
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(672, 182);
+            this.label11.Location = new System.Drawing.Point(391, 112);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 19);
             this.label11.TabIndex = 49;
@@ -312,23 +228,15 @@ namespace PansiyonKayitUygulamasi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(914, 445);
+            this.ClientSize = new System.Drawing.Size(624, 445);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtTc);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cmbCinsiyet);
-            this.Controls.Add(this.txtUcret);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.dtpCikisTarihi);
-            this.Controls.Add(this.dtpGirisTarihi);
             this.Controls.Add(this.mskTelefon);
-            this.Controls.Add(this.txtOdaNo);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.txtAd);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -337,7 +245,6 @@ namespace PansiyonKayitUygulamasi
             this.Controls.Add(this.txtArama);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.btnTemizle);
-            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnListele);
             this.Controls.Add(this.dataGridView1);
@@ -359,25 +266,16 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnListele;
         private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.Button btnAra;
         private System.Windows.Forms.TextBox txtArama;
         private System.Windows.Forms.TextBox txtTc;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbCinsiyet;
-        private System.Windows.Forms.TextBox txtUcret;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtpCikisTarihi;
-        private System.Windows.Forms.DateTimePicker dtpGirisTarihi;
         private System.Windows.Forms.MaskedTextBox mskTelefon;
-        private System.Windows.Forms.TextBox txtOdaNo;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtAd;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

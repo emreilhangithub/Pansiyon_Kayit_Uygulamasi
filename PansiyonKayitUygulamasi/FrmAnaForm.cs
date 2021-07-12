@@ -27,19 +27,19 @@ namespace PansiyonKayitUygulamasi
         private void btnYeniMusteri_Click(object sender, EventArgs e)
         {
             FrmYeniMusteri fr = new FrmYeniMusteri();
-            fr.Show();
+            fr.ShowDialog();
         }
 
         private void btnOdalar_Click(object sender, EventArgs e)
         {
             FrmOdalar fr = new FrmOdalar();
-            fr.Show();
+            fr.ShowDialog();
         }
 
         private void btnMusteriler_Click(object sender, EventArgs e)
         {
             FrmMusteriler fr = new FrmMusteriler();
-            fr.Show();
+            fr.ShowDialog();
         }
 
         private void btnHakkimizda_Click(object sender, EventArgs e)
@@ -47,6 +47,17 @@ namespace PansiyonKayitUygulamasi
             string mesaj = "Bu Program Mustafa Emre İlhan tarafından yazılmıştır";
             string tarih = "25.06.2021";
             MessageBox.Show(mesaj+" "+tarih);
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMusteriCikis_Click(object sender, EventArgs e)
+        {
+            frmMusteriCikis fr = new frmMusteriCikis();
+            fr.ShowDialog();
         }
     }
 }
