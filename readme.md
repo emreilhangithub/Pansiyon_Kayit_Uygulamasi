@@ -43,6 +43,7 @@ Bu ekranda pansiyondan çıkış yapmak isteyen müşterilere çıkış yaptır�
 ![MusteriCikis](https://github.com/emreilhangithub/Pansiyon_Kayit_Uygulamasi/blob/master/images/MusteriCikis.png)
 
 3)Oda numarası seçilince müşterinin geliş tarihi,çıkacağı tarih(anlık değişiyor),süre vede toplam ödeyeceği tutar yazmaktadır.
+
 ![MusteriCikisUcretlendirme](https://github.com/emreilhangithub/Pansiyon_Kayit_Uygulamasi/blob/master/images/MusteriCikisUcretlendirme.png)
 
 4)Pansiyon sorumlusu müşteriden ödeyeceği tutarı tahsil ettikten sonra Müşteri Çıkışı butonuna basarak çıkışı gerçekleştirir.
