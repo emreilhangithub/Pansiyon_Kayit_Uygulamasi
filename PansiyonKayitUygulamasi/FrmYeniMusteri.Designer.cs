@@ -29,6 +29,7 @@ namespace PansiyonKayitUygulamasi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmYeniMusteri));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbOdaNo = new System.Windows.Forms.ComboBox();
             this.txtTc = new System.Windows.Forms.TextBox();
@@ -82,7 +83,7 @@ namespace PansiyonKayitUygulamasi
             this.cmbOdaNo.FormattingEnabled = true;
             this.cmbOdaNo.Location = new System.Drawing.Point(123, 210);
             this.cmbOdaNo.Name = "cmbOdaNo";
-            this.cmbOdaNo.Size = new System.Drawing.Size(233, 27);
+            this.cmbOdaNo.Size = new System.Drawing.Size(233, 37);
             this.cmbOdaNo.TabIndex = 29;
             // 
             // txtTc
@@ -90,7 +91,7 @@ namespace PansiyonKayitUygulamasi
             this.txtTc.Location = new System.Drawing.Point(123, 180);
             this.txtTc.MaxLength = 11;
             this.txtTc.Name = "txtTc";
-            this.txtTc.Size = new System.Drawing.Size(233, 27);
+            this.txtTc.Size = new System.Drawing.Size(233, 37);
             this.txtTc.TabIndex = 28;
             // 
             // label10
@@ -98,7 +99,7 @@ namespace PansiyonKayitUygulamasi
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(48, 92);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 19);
+            this.label10.Size = new System.Drawing.Size(102, 29);
             this.label10.TabIndex = 26;
             this.label10.Text = "Cinsiyet:";
             // 
@@ -111,14 +112,14 @@ namespace PansiyonKayitUygulamasi
             "Kadın"});
             this.cmbCinsiyet.Location = new System.Drawing.Point(123, 89);
             this.cmbCinsiyet.Name = "cmbCinsiyet";
-            this.cmbCinsiyet.Size = new System.Drawing.Size(233, 27);
+            this.cmbCinsiyet.Size = new System.Drawing.Size(233, 37);
             this.cmbCinsiyet.TabIndex = 25;
             // 
             // dtpGirisTarihi
             // 
             this.dtpGirisTarihi.Location = new System.Drawing.Point(123, 243);
             this.dtpGirisTarihi.Name = "dtpGirisTarihi";
-            this.dtpGirisTarihi.Size = new System.Drawing.Size(233, 27);
+            this.dtpGirisTarihi.Size = new System.Drawing.Size(233, 37);
             this.dtpGirisTarihi.TabIndex = 20;
             // 
             // btnKaydet
@@ -136,28 +137,28 @@ namespace PansiyonKayitUygulamasi
             this.mskTelefon.Location = new System.Drawing.Point(123, 120);
             this.mskTelefon.Mask = "(999) 000-0000";
             this.mskTelefon.Name = "mskTelefon";
-            this.mskTelefon.Size = new System.Drawing.Size(233, 27);
+            this.mskTelefon.Size = new System.Drawing.Size(233, 37);
             this.mskTelefon.TabIndex = 17;
             // 
             // txtMail
             // 
             this.txtMail.Location = new System.Drawing.Point(123, 149);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(233, 27);
+            this.txtMail.Size = new System.Drawing.Size(233, 37);
             this.txtMail.TabIndex = 11;
             // 
             // txtSoyad
             // 
             this.txtSoyad.Location = new System.Drawing.Point(123, 56);
             this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(233, 27);
+            this.txtSoyad.Size = new System.Drawing.Size(233, 37);
             this.txtSoyad.TabIndex = 10;
             // 
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(123, 23);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(233, 27);
+            this.txtAd.Size = new System.Drawing.Size(233, 37);
             this.txtAd.TabIndex = 9;
             // 
             // label7
@@ -165,7 +166,7 @@ namespace PansiyonKayitUygulamasi
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(30, 243);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 19);
+            this.label7.Size = new System.Drawing.Size(126, 29);
             this.label7.TabIndex = 6;
             this.label7.Text = "Giriş Tarihi:";
             // 
@@ -174,7 +175,7 @@ namespace PansiyonKayitUygulamasi
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 210);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 19);
+            this.label6.Size = new System.Drawing.Size(166, 29);
             this.label6.TabIndex = 5;
             this.label6.Text = "Oda Numarası:";
             // 
@@ -183,7 +184,7 @@ namespace PansiyonKayitUygulamasi
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 181);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 19);
+            this.label5.Size = new System.Drawing.Size(158, 29);
             this.label5.TabIndex = 4;
             this.label5.Text = "T.C Kimlik No:";
             // 
@@ -192,7 +193,7 @@ namespace PansiyonKayitUygulamasi
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(74, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 19);
+            this.label4.Size = new System.Drawing.Size(64, 29);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mail:";
             // 
@@ -201,7 +202,7 @@ namespace PansiyonKayitUygulamasi
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(52, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.Size = new System.Drawing.Size(96, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Telefon:";
             // 
@@ -210,7 +211,7 @@ namespace PansiyonKayitUygulamasi
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(56, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 19);
+            this.label2.Size = new System.Drawing.Size(90, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Soyadı:";
             // 
@@ -219,19 +220,20 @@ namespace PansiyonKayitUygulamasi
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(79, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 19);
+            this.label1.Size = new System.Drawing.Size(55, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adı:";
             // 
             // FrmYeniMusteri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(381, 333);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

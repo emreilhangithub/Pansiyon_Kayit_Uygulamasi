@@ -28,43 +28,58 @@ namespace PansiyonKayitUygulamasi
         }
 
         private void MusteriTablosuKontrol()
-        {
-            SqlCommand komut = new SqlCommand("Select * from Tbl_Musteri", bgl.baglanti());
-            SqlDataReader read = komut.ExecuteReader();
-            while (read.Read()) //Kayıtlar okundugu sürece bu işlemi yap
+        {            
+            try
             {
-                foreach (Control item in Controls) //formdaki kontrolleri dolas
+                SqlCommand komut = new SqlCommand("Select * from Tbl_Musteri", bgl.baglanti());
+                SqlDataReader read = komut.ExecuteReader();
+                while (read.Read()) //Kayıtlar okundugu sürece bu işlemi yap
                 {
-                    if (item is Button) //itemler buton ise
+                    foreach (Control item in Controls) //formdaki kontrolleri dolas
                     {
-                        if (item.Text == read["OdaNo"].ToString()) //eğer veri tabanındaki kayıt ile eşleşiyorsa item 
+                        if (item is Button) //itemler buton ise
                         {
-                            item.Text = read["Tc"].ToString(); //plakayı yaz
-                        }
+                            if (item.Text == read["OdaNo"].ToString()) //eğer veri tabanındaki kayıt ile eşleşiyorsa item 
+                            {
+                                item.Text = read["Tc"].ToString(); //plakayı yaz
+                            }
 
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message);
             }
         }
 
         private void DoluOdalar()
         {
-            SqlCommand komut = new SqlCommand("Select * from Tbl_Odalar", bgl.baglanti());
-            SqlDataReader read = komut.ExecuteReader();
-            while (read.Read()) //Kayıtlar okundugu sürece bu işlemi yap
+            try
             {
-                foreach (Control item in Controls) //formdaki kontrolleri dolas
+                SqlCommand komut = new SqlCommand("Select * from Tbl_Odalar", bgl.baglanti());
+                SqlDataReader read = komut.ExecuteReader();
+                while (read.Read()) //Kayıtlar okundugu sürece bu işlemi yap
                 {
-                    if (item is Button) //itemler buton ise
+                    foreach (Control item in Controls) //formdaki kontrolleri dolas
                     {
-                        if (item.Text == read["Oda_Numarasi"].ToString() && read["Oda_Durumu"].ToString() == "DOLU") //eğer veri tabanındaki kayıt ile eşleşiyorsa item ve durumu dolu ise
+                        if (item is Button) //itemler buton ise
                         {
-                            item.BackColor = Color.Red;
-                        }
+                            if (item.Text == read["Oda_Numarasi"].ToString() && read["Oda_Durumu"].ToString() == "DOLU") //eğer veri tabanındaki kayıt ile eşleşiyorsa item ve durumu dolu ise
+                            {
+                                item.BackColor = Color.Red;
+                            }
 
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message);
+            }
+           
         }
 
         private void BosOdalar()

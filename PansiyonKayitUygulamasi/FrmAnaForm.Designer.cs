@@ -30,7 +30,6 @@ namespace PansiyonKayitUygulamasi
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnAdminGiris = new System.Windows.Forms.Button();
             this.btnYeniMusteri = new System.Windows.Forms.Button();
             this.btnOdalar = new System.Windows.Forms.Button();
             this.btnMusteriler = new System.Windows.Forms.Button();
@@ -40,19 +39,9 @@ namespace PansiyonKayitUygulamasi
             this.lblTarih = new System.Windows.Forms.Label();
             this.lblSaat = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnAdminGiris = new System.Windows.Forms.Button();
+            this.btnCikisYapmisMusteriler = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnAdminGiris
-            // 
-            this.btnAdminGiris.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAdminGiris.Location = new System.Drawing.Point(52, 120);
-            this.btnAdminGiris.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAdminGiris.Name = "btnAdminGiris";
-            this.btnAdminGiris.Size = new System.Drawing.Size(144, 89);
-            this.btnAdminGiris.TabIndex = 0;
-            this.btnAdminGiris.Text = "Admin Giriş";
-            this.btnAdminGiris.UseVisualStyleBackColor = false;
-            this.btnAdminGiris.Click += new System.EventHandler(this.btnAdminGiris_Click);
             // 
             // btnYeniMusteri
             // 
@@ -93,7 +82,7 @@ namespace PansiyonKayitUygulamasi
             // btnHakkimizda
             // 
             this.btnHakkimizda.BackColor = System.Drawing.Color.SlateGray;
-            this.btnHakkimizda.Location = new System.Drawing.Point(337, 251);
+            this.btnHakkimizda.Location = new System.Drawing.Point(450, 251);
             this.btnHakkimizda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHakkimizda.Name = "btnHakkimizda";
             this.btnHakkimizda.Size = new System.Drawing.Size(144, 89);
@@ -116,7 +105,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // btnMusteriCikis
             // 
-            this.btnMusteriCikis.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnMusteriCikis.BackColor = System.Drawing.Color.OrangeRed;
             this.btnMusteriCikis.Location = new System.Drawing.Point(635, 120);
             this.btnMusteriCikis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMusteriCikis.Name = "btnMusteriCikis";
@@ -132,7 +121,7 @@ namespace PansiyonKayitUygulamasi
             this.lblTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblTarih.Location = new System.Drawing.Point(133, 33);
             this.lblTarih.Name = "lblTarih";
-            this.lblTarih.Size = new System.Drawing.Size(111, 44);
+            this.lblTarih.Size = new System.Drawing.Size(74, 29);
             this.lblTarih.TabIndex = 11;
             this.lblTarih.Text = "Tarih";
             // 
@@ -142,7 +131,7 @@ namespace PansiyonKayitUygulamasi
             this.lblSaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSaat.Location = new System.Drawing.Point(518, 33);
             this.lblSaat.Name = "lblSaat";
-            this.lblSaat.Size = new System.Drawing.Size(98, 44);
+            this.lblSaat.Size = new System.Drawing.Size(65, 29);
             this.lblSaat.TabIndex = 12;
             this.lblSaat.Text = "Saat";
             // 
@@ -150,12 +139,37 @@ namespace PansiyonKayitUygulamasi
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnAdminGiris
+            // 
+            this.btnAdminGiris.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAdminGiris.Location = new System.Drawing.Point(52, 120);
+            this.btnAdminGiris.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdminGiris.Name = "btnAdminGiris";
+            this.btnAdminGiris.Size = new System.Drawing.Size(144, 89);
+            this.btnAdminGiris.TabIndex = 0;
+            this.btnAdminGiris.Text = "Admin Giriş";
+            this.btnAdminGiris.UseVisualStyleBackColor = false;
+            this.btnAdminGiris.Click += new System.EventHandler(this.btnAdminGiris_Click);
+            // 
+            // btnCikisYapmisMusteriler
+            // 
+            this.btnCikisYapmisMusteriler.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnCikisYapmisMusteriler.Location = new System.Drawing.Point(248, 251);
+            this.btnCikisYapmisMusteriler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCikisYapmisMusteriler.Name = "btnCikisYapmisMusteriler";
+            this.btnCikisYapmisMusteriler.Size = new System.Drawing.Size(144, 89);
+            this.btnCikisYapmisMusteriler.TabIndex = 13;
+            this.btnCikisYapmisMusteriler.Text = "Çıkış Yapmış Müşteriler";
+            this.btnCikisYapmisMusteriler.UseVisualStyleBackColor = false;
+            this.btnCikisYapmisMusteriler.Click += new System.EventHandler(this.btnCikisYapmisMusteriler_Click);
+            // 
             // FrmAnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(792, 356);
+            this.Controls.Add(this.btnCikisYapmisMusteriler);
             this.Controls.Add(this.lblSaat);
             this.Controls.Add(this.lblTarih);
             this.Controls.Add(this.btnMusteriCikis);
@@ -179,8 +193,6 @@ namespace PansiyonKayitUygulamasi
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAdminGiris;
         private System.Windows.Forms.Button btnYeniMusteri;
         private System.Windows.Forms.Button btnOdalar;
         private System.Windows.Forms.Button btnMusteriler;
@@ -190,5 +202,7 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.Label lblTarih;
         private System.Windows.Forms.Label lblSaat;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnAdminGiris;
+        private System.Windows.Forms.Button btnCikisYapmisMusteriler;
     }
 }

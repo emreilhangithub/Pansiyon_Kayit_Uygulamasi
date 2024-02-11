@@ -29,6 +29,7 @@ namespace PansiyonKayitUygulamasi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGirisPaneli));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
@@ -42,7 +43,7 @@ namespace PansiyonKayitUygulamasi
             this.label1.Location = new System.Drawing.Point(61, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.Size = new System.Drawing.Size(147, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kullanıcı Adı:";
             // 
@@ -52,7 +53,7 @@ namespace PansiyonKayitUygulamasi
             this.label2.Location = new System.Drawing.Point(61, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 19);
+            this.label2.Size = new System.Drawing.Size(61, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Şifre";
             // 
@@ -61,7 +62,7 @@ namespace PansiyonKayitUygulamasi
             this.txtKullaniciAdi.Location = new System.Drawing.Point(179, 22);
             this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(83, 27);
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(83, 37);
             this.txtKullaniciAdi.TabIndex = 2;
             this.txtKullaniciAdi.Text = "emre";
             // 
@@ -70,7 +71,7 @@ namespace PansiyonKayitUygulamasi
             this.txtKullaniciSifre.Location = new System.Drawing.Point(179, 59);
             this.txtKullaniciSifre.Margin = new System.Windows.Forms.Padding(2);
             this.txtKullaniciSifre.Name = "txtKullaniciSifre";
-            this.txtKullaniciSifre.Size = new System.Drawing.Size(83, 27);
+            this.txtKullaniciSifre.Size = new System.Drawing.Size(83, 37);
             this.txtKullaniciSifre.TabIndex = 3;
             this.txtKullaniciSifre.Text = "test";
             this.txtKullaniciSifre.UseSystemPasswordChar = true;
@@ -88,7 +89,7 @@ namespace PansiyonKayitUygulamasi
             // 
             // FrmGirisPaneli
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -99,6 +100,7 @@ namespace PansiyonKayitUygulamasi
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmGirisPaneli";

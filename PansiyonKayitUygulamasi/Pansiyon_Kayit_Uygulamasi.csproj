@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMusteriCikis.cs">
+    <Compile Include="FrmCikisYapmisMusteriler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMusteriCikis.Designer.cs">
-      <DependentUpon>frmMusteriCikis.cs</DependentUpon>
+    <Compile Include="FrmCikisYapmisMusteriler.Designer.cs">
+      <DependentUpon>FrmCikisYapmisMusteriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriCikis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriCikis.Designer.cs">
+      <DependentUpon>FrmMusteriCikis.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMusteriler.cs">
       <SubType>Form</SubType>
@@ -91,11 +97,14 @@
     <EmbeddedResource Include="FrmAnaForm.resx">
       <DependentUpon>FrmAnaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCikisYapmisMusteriler.resx">
+      <DependentUpon>FrmCikisYapmisMusteriler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGirisPaneli.resx">
       <DependentUpon>FrmGirisPaneli.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMusteriCikis.resx">
-      <DependentUpon>frmMusteriCikis.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMusteriCikis.resx">
+      <DependentUpon>FrmMusteriCikis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMusteriler.resx">
       <DependentUpon>FrmMusteriler.cs</DependentUpon>

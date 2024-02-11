@@ -1,7 +1,7 @@
 ﻿
 namespace PansiyonKayitUygulamasi
 {
-    partial class frmMusteriCikis
+    partial class FrmMusteriCikis
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,9 @@ namespace PansiyonKayitUygulamasi
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMusteriCikis));
             this.btnIptal = new System.Windows.Forms.Button();
-            this.btnAracCikisi = new System.Windows.Forms.Button();
+            this.btnMusteriCikisi = new System.Windows.Forms.Button();
             this.grpMusteriBilgileri = new System.Windows.Forms.GroupBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@ namespace PansiyonKayitUygulamasi
             this.txtTc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSeciliOda2 = new System.Windows.Forms.TextBox();
-            this.cmbOdaNumarasiSec = new System.Windows.Forms.ComboBox();
+            this.cmbParkYeriSec = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grpUcretlendirme = new System.Windows.Forms.GroupBox();
@@ -74,22 +75,22 @@ namespace PansiyonKayitUygulamasi
             this.btnIptal.Location = new System.Drawing.Point(368, 546);
             this.btnIptal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(112, 35);
+            this.btnIptal.Size = new System.Drawing.Size(167, 35);
             this.btnIptal.TabIndex = 8;
             this.btnIptal.Text = "İptal";
             this.btnIptal.UseVisualStyleBackColor = true;
             this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
-            // btnAracCikisi
+            // btnMusteriCikisi
             // 
-            this.btnAracCikisi.Location = new System.Drawing.Point(208, 546);
-            this.btnAracCikisi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAracCikisi.Name = "btnAracCikisi";
-            this.btnAracCikisi.Size = new System.Drawing.Size(112, 35);
-            this.btnAracCikisi.TabIndex = 7;
-            this.btnAracCikisi.Text = "Araç Çıkışı";
-            this.btnAracCikisi.UseVisualStyleBackColor = true;
-            this.btnAracCikisi.Click += new System.EventHandler(this.btnAracCikisi_Click);
+            this.btnMusteriCikisi.Location = new System.Drawing.Point(208, 546);
+            this.btnMusteriCikisi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMusteriCikisi.Name = "btnMusteriCikisi";
+            this.btnMusteriCikisi.Size = new System.Drawing.Size(147, 35);
+            this.btnMusteriCikisi.TabIndex = 7;
+            this.btnMusteriCikisi.Text = "Müşteri Çıkışı";
+            this.btnMusteriCikisi.UseVisualStyleBackColor = true;
+            this.btnMusteriCikisi.Click += new System.EventHandler(this.btnMusteriCikisi_Click);
             // 
             // grpMusteriBilgileri
             // 
@@ -106,7 +107,7 @@ namespace PansiyonKayitUygulamasi
             this.grpMusteriBilgileri.Controls.Add(this.txtTc);
             this.grpMusteriBilgileri.Controls.Add(this.label8);
             this.grpMusteriBilgileri.Controls.Add(this.txtSeciliOda2);
-            this.grpMusteriBilgileri.Controls.Add(this.cmbOdaNumarasiSec);
+            this.grpMusteriBilgileri.Controls.Add(this.cmbParkYeriSec);
             this.grpMusteriBilgileri.Controls.Add(this.label7);
             this.grpMusteriBilgileri.Controls.Add(this.label3);
             this.grpMusteriBilgileri.Location = new System.Drawing.Point(22, 200);
@@ -132,7 +133,7 @@ namespace PansiyonKayitUygulamasi
             this.label14.Location = new System.Drawing.Point(384, 209);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 30);
+            this.label14.Size = new System.Drawing.Size(37, 20);
             this.label14.TabIndex = 18;
             this.label14.Text = "Mail";
             // 
@@ -168,7 +169,7 @@ namespace PansiyonKayitUygulamasi
             this.label12.Location = new System.Drawing.Point(378, 92);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 30);
+            this.label12.Size = new System.Drawing.Size(64, 20);
             this.label12.TabIndex = 14;
             this.label12.Text = "Cinsiyet";
             // 
@@ -234,15 +235,15 @@ namespace PansiyonKayitUygulamasi
             this.txtSeciliOda2.Size = new System.Drawing.Size(180, 26);
             this.txtSeciliOda2.TabIndex = 7;
             // 
-            // cmbOdaNumarasiSec
+            // cmbParkYeriSec
             // 
-            this.cmbOdaNumarasiSec.FormattingEnabled = true;
-            this.cmbOdaNumarasiSec.Location = new System.Drawing.Point(153, 35);
-            this.cmbOdaNumarasiSec.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmbOdaNumarasiSec.Name = "cmbOdaNumarasiSec";
-            this.cmbOdaNumarasiSec.Size = new System.Drawing.Size(180, 28);
-            this.cmbOdaNumarasiSec.TabIndex = 6;
-            this.cmbOdaNumarasiSec.SelectedIndexChanged += new System.EventHandler(this.cmbParkYeri_SelectedIndexChanged);
+            this.cmbParkYeriSec.FormattingEnabled = true;
+            this.cmbParkYeriSec.Location = new System.Drawing.Point(153, 35);
+            this.cmbParkYeriSec.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbParkYeriSec.Name = "cmbParkYeriSec";
+            this.cmbParkYeriSec.Size = new System.Drawing.Size(180, 28);
+            this.cmbParkYeriSec.TabIndex = 6;
+            this.cmbParkYeriSec.SelectedIndexChanged += new System.EventHandler(this.cmbOdaNumari_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -330,7 +331,7 @@ namespace PansiyonKayitUygulamasi
             this.lblToplamTutar.Location = new System.Drawing.Point(212, 108);
             this.lblToplamTutar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblToplamTutar.Name = "lblToplamTutar";
-            this.lblToplamTutar.Size = new System.Drawing.Size(27, 30);
+            this.lblToplamTutar.Size = new System.Drawing.Size(18, 20);
             this.lblToplamTutar.TabIndex = 7;
             this.lblToplamTutar.Text = "0";
             // 
@@ -341,7 +342,7 @@ namespace PansiyonKayitUygulamasi
             this.lblSure.Location = new System.Drawing.Point(212, 80);
             this.lblSure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSure.Name = "lblSure";
-            this.lblSure.Size = new System.Drawing.Size(27, 30);
+            this.lblSure.Size = new System.Drawing.Size(18, 20);
             this.lblSure.TabIndex = 6;
             this.lblSure.Text = "0";
             // 
@@ -381,7 +382,7 @@ namespace PansiyonKayitUygulamasi
             this.grpOdaBilgileri.Size = new System.Drawing.Size(300, 154);
             this.grpOdaBilgileri.TabIndex = 4;
             this.grpOdaBilgileri.TabStop = false;
-            this.grpOdaBilgileri.Text = "Plaka Bilgileri";
+            this.grpOdaBilgileri.Text = "Oda Bilgileri";
             // 
             // txtSeciliOda
             // 
@@ -407,7 +408,7 @@ namespace PansiyonKayitUygulamasi
             this.label2.Location = new System.Drawing.Point(9, 105);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 30);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Seçili Oda";
             // 
@@ -417,7 +418,7 @@ namespace PansiyonKayitUygulamasi
             this.label1.Location = new System.Drawing.Point(9, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 30);
+            this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Oda Ara";
             // 
@@ -425,19 +426,20 @@ namespace PansiyonKayitUygulamasi
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // frmMusteriCikis
+            // FrmMusteriCikis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(933, 631);
             this.Controls.Add(this.btnIptal);
-            this.Controls.Add(this.btnAracCikisi);
+            this.Controls.Add(this.btnMusteriCikisi);
             this.Controls.Add(this.grpMusteriBilgileri);
             this.Controls.Add(this.grpUcretlendirme);
             this.Controls.Add(this.grpOdaBilgileri);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmMusteriCikis";
+            this.Name = "FrmMusteriCikis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Müşteri Çıkışı";
             this.Load += new System.EventHandler(this.frmMusteriCikis_Load);
@@ -454,7 +456,7 @@ namespace PansiyonKayitUygulamasi
         #endregion
 
         private System.Windows.Forms.Button btnIptal;
-        private System.Windows.Forms.Button btnAracCikisi;
+        private System.Windows.Forms.Button btnMusteriCikisi;
         private System.Windows.Forms.GroupBox grpMusteriBilgileri;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label14;
@@ -469,7 +471,7 @@ namespace PansiyonKayitUygulamasi
         private System.Windows.Forms.TextBox txtTc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSeciliOda2;
-        private System.Windows.Forms.ComboBox cmbOdaNumarasiSec;
+        private System.Windows.Forms.ComboBox cmbParkYeriSec;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpUcretlendirme;

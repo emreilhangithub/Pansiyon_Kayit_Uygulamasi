@@ -56,7 +56,7 @@ namespace PansiyonKayitUygulamasi
 
         private void btnMusteriCikis_Click(object sender, EventArgs e)
         {
-            frmMusteriCikis fr = new frmMusteriCikis();
+            FrmMusteriCikis fr = new FrmMusteriCikis();
             fr.ShowDialog();
         }
 
@@ -69,6 +69,12 @@ namespace PansiyonKayitUygulamasi
         {
             lblTarih.Text = DateTime.Now.ToLongDateString();
             lblSaat.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnCikisYapmisMusteriler_Click(object sender, EventArgs e)
+        {
+            FrmCikisYapmisMusteriler fr = new FrmCikisYapmisMusteriler();
+            fr.ShowDialog();
         }
     }
 }

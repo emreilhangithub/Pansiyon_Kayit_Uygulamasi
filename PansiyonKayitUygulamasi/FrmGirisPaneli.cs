@@ -23,33 +23,39 @@ namespace PansiyonKayitUygulamasi
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            var result = new List<Personel>(); //liste oluşturduk         
-
-            SqlCommand cmd = new SqlCommand("select Personel_Adi,Personel_Sifre from Tbl_Personel", bgl.baglanti());
-     
-            SqlDataAdapter da = new SqlDataAdapter(cmd);            
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            result = dt.AsEnumerable().Select(s => new Personel
+            try
             {
-                Personel_Adi1 = s.Field<string>("Personel_Adi"),
-                Personel_Sifre1 = s.Field<string>("Personel_Sifre")
-            }).ToList();
+                var result = new List<Personel>(); //liste oluşturduk         
 
-            var user = result.FirstOrDefault(x => x.Personel_Adi1 == txtKullaniciAdi.Text && x.Personel_Sifre1 == txtKullaniciSifre.Text);
-            if (user != null)
-            {
-                MessageBox.Show("Giriş başarılı Ana Sayfaya Hoş Geldiniz");
-                FrmAnaForm fr = new FrmAnaForm();
-                fr.Show();
-                this.Hide();
+                SqlCommand cmd = new SqlCommand("select Personel_Adi,Personel_Sifre from Tbl_Personel", bgl.baglanti());
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                result = dt.AsEnumerable().Select(s => new Personel
+                {
+                    Personel_Adi1 = s.Field<string>("Personel_Adi"),
+                    Personel_Sifre1 = s.Field<string>("Personel_Sifre")
+                }).ToList();
+
+                var user = result.FirstOrDefault(x => x.Personel_Adi1 == txtKullaniciAdi.Text && x.Personel_Sifre1 == txtKullaniciSifre.Text);
+                if (user != null)
+                {
+                    MessageBox.Show("Giriş başarılı Ana Sayfaya Hoş Geldiniz");
+                    FrmAnaForm fr = new FrmAnaForm();
+                    fr.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Geçersiz Giriş, lütfen kullanıcı adı ve şifreyi kontrol edin");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Geçersiz Giriş, lütfen kullanıcı adı ve şifreyi kontrol edin");
-            }        
-
+                MessageBox.Show("Hata oluştu: " + ex.Message);
+            }                  
         }
     }
 }
