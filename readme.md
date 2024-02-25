@@ -5,7 +5,7 @@
 *Bu projede **.Net** kullanarak pansiyon kayıt otomasyonu oluşturdum. CRUD operasyonları için ado.net kullandım.*
 
 # Database Yedeği #
-Database kısmına [buradan](https://github.com/emreilhangithub/PansiyonKayitUygulamasi/tree/master/database) ulaşıp kendinize yükleyebilirsiniz.
+Database kısmına [buradan](https://github.com/emreilhangithub/PPansiyon_Kayit_Uygulamasi/tree/master/database) ulaşıp kendinize yükleyebilirsiniz.
 
 # Proje İçeriği #
 
