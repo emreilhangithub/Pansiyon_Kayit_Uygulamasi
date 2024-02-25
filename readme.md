@@ -1,4 +1,4 @@
-# PansiyonKayitUygulamasi
+# Pansiyon_Kayit_Uygulamasi
 
 ## Proje Tanıtımı 
 
